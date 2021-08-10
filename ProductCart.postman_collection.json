@@ -1,0 +1,198 @@
+{
+	"info": {
+		"_postman_id": "3208fe12-d775-400d-a7bd-90148b2c3a69",
+		"name": "ProductCart",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "product",
+			"item": [
+				{
+					"name": "get All Product",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/product/getAllProduct?status=1",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"product",
+								"getAllProduct"
+							],
+							"query": [
+								{
+									"key": "status",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add Product",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"data\":{\r\n        \"productName\":\"test\",\r\n        \"imagePath\":\"C:/test/Desktop/test\",\r\n        \"description\":\"Test Description\",\r\n        \"quantity\":\"10\",\r\n        \"unitPrice\":\"5\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/product/addProduct",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"product",
+								"addProduct"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Download Product Image",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/product/download/bMDQL.png",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"product",
+								"download",
+								"bMDQL.png"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "upload Product Image",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "file",
+									"type": "file",
+									"src": "/C:/Users/JINESH-0026/Downloads/image_2021_07_23T08_18_54_689Z.png"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{URL}}/product/uploadProductImage",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"product",
+								"uploadProductImage"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "cart",
+			"item": [
+				{
+					"name": "Add To cart",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"data\":{\r\n        \"email\":\"jinesh@gmail.com\", \r\n        \"product_id\":\"56379\",\r\n        \"price\":\"10\",\r\n        \"qty\":2\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/cart/addItem",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"cart",
+								"addItem"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Cart",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"data\":{\r\n        \"email\":\"jinesh@gmail.com\", \r\n        \"product_id\":\"56379\",\r\n        \"price\":\"10\",\r\n        \"qty\":\"10\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/cart/updateCart",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"cart",
+								"updateCart"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get cart",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"data\":{\r\n        \"email\":\"jinesh@gmail.com\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/cart/getCart",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"cart",
+								"getCart"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
